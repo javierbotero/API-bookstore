@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
-  def show
+  def loggin
     @user = User.where('email = ? AND password = ?', params[:email], params[:password])
 
-    if @user
-      render json: @user
+    if @user.length > 0
+      render json: { id: @user.first.id }
     else
       render nothing: true, status: 404
     end
+  end
+
+  def show
+    @user = User.find(paramas[:id])
+    @books = @user.books.includes(:comments)
+
+    render json: @books
   end
 
   def create
