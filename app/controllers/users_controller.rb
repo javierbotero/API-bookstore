@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(paramas[:id])
+    @user = User.find(params[:id])
     @books = @user.books.includes(:comments)
 
     render json: @books
