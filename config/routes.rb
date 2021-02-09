@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resource :users,
            only: [:show, :create, :update, :destroy]
   post '/loggin', to: 'users#loggin'
+  resources :books, only: [:create, :update, :destroy]
 end
