@@ -18,10 +18,10 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = Book.find(pamams[:id])
+    @book = Book.find(params[:id])
 
     if @book.update(book_params)
-      render json: { data: 'Book updated' }
+      render json: @book
     else
       render json: @book.errors, status: 404
     end

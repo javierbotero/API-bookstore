@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def user_books
     @user = User.find(params[:id])
     @books = @user.books.includes(:comments)
 
