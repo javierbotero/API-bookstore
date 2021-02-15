@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     if @book.save
       render json: @book
     else
-      render json: @book.errors, status: 404
+      render json: @book.errors.full_messages, status: 404
     end
   end
 
@@ -23,7 +23,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       render json: @book
     else
-      render json: @book.errors, status: 404
+      render json: @book.errors.full_messages, status: 404
     end
   end
 

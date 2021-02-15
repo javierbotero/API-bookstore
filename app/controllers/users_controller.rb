@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      render json: @user.errors, status: 404
+      render json: @user.errors.full_messages, status: 404
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       render json: @user
     else
-      render json: @user.errors, status: 404
+      render json: @user.errors.full_messages, status: 404
     end
   end
 
