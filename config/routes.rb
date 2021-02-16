@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post '/user-books', to: 'users#user_books'
   post '/loggin', to: 'users#loggin'
   resources :books, only: [:create, :update, :destroy]
+  resources :comments, only: [:show, :create, :update, :destroy]
 end
