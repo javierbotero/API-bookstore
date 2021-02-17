@@ -21,13 +21,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
-
-    render json: 'Comment destroyed'
-  end
-
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(body: params[:body])
@@ -35,5 +28,12 @@ class CommentsController < ApplicationController
     else
       render json: @comment.errors.full_messages, status: 404
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    render json: 'Comment destroyed'
   end
 end
