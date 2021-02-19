@@ -34,6 +34,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
 
-    render json: 'Comment destroyed'
+    render json: { data: 'Comment destroyed' }
   end
 end
