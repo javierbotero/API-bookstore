@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2021_02_09_205200) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "title"
     t.string "category"
     t.string "author"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_205200) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "book_id", null: false
+    t.bigint "book_id", null: false
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
