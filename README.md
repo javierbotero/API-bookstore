@@ -115,7 +115,9 @@ DELETE /comments/:id comments destroy,
 Also if you want to check the proper payload to make the requests take a look at the controller files at:
 
  ./app/controllers/users_controller.rb,
+ 
  ./app/controllers/comments_controller.rb,
+ 
  ./app/controllers/books_controller.rb
 
 ## Author
