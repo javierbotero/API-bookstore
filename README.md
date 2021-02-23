@@ -83,19 +83,33 @@ after the project has been forked:
 VERB / URL / CONTROLLER / ACTION
 
 PATCH /users users update,
+
 PUT /users users update,
+
 DELETE /users users destroy,
+
 POST /users users create,
+
 POST /user-books users user_books,
+
 POST /loggin users loggin,
+
 POST /books books create,
+
 PATCH /books/:id books update,
+
 PUT /books/:id books update,
+
 DELETE /books/:id books destroy,
+
 POST /comments comments create,
+
 GET /comments/:id comments show,
+
 PATCH /comments/:id comments update,
+
 PUT /comments/:id comments update,
+
 DELETE /comments/:id comments destroy,
 
 Also if you want to check the proper payload to make the requests take a look at the controller files at:
